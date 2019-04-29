@@ -3,55 +3,59 @@ import java.util.Queue;
 public class Main {
 
     public static void main(String[] args) {
-        ListGraph graph = new ListGraph(13);
-        graph.addEdge(0, 5);
-        graph.addEdge(4, 3);
-        graph.addEdge(0, 1);
-        graph.addEdge(9, 12);
-        graph.addEdge(6, 4);
-        graph.addEdge(5, 4);
-        graph.addEdge(0, 2);
-        graph.addEdge(11, 12);
-        graph.addEdge(9, 10);
-        graph.addEdge(0, 6);
-        graph.addEdge(7, 8);
-        graph.addEdge(9, 11);
-        graph.addEdge(5, 3);
-        //graph.addEdge(6, 7);
-        Components components = new Components(graph);
+        ListGraph listGraph = new ListGraph(13);
+        /*listGraph.addEdge(0, 5);
+        listGraph.addEdge(4, 3);
+        listGraph.addEdge(0, 1);
+        listGraph.addEdge(9, 12);
+        listGraph.addEdge(6, 4);
+        listGraph.addEdge(5, 4);
+        listGraph.addEdge(0, 2);
+        listGraph.addEdge(11, 12);
+        listGraph.addEdge(9, 10);
+        listGraph.addEdge(0, 6);
+        listGraph.addEdge(7, 8);
+        listGraph.addEdge(9, 11);
+        listGraph.addEdge(5, 3);
+        //listGraph.addEdge(6, 7); */
+        MatrixGraph matrixGraph = new MatrixGraph(13);
+        RandomGraphGenerator randomGraphGenerator = new RandomGraphGenerator(listGraph, matrixGraph, 0.3);
+        Components components = new Components(listGraph);
         System.out.println(components.getCount() + " components");
         components.printComponents();
+        System.out.println(listGraph.printGraph());
+        System.out.println(matrixGraph.printGraph());
 
 
-       /* graph.addEdge(0, 1);
-        graph.addEdge(1, 2);
-        graph.addEdge(1, 3);
-        graph.addEdge(1, 7);
-        graph.addEdge(2, 3);
-        graph.addEdge(2, 5);
-        graph.addEdge(2, 6);
-        graph.addEdge(5, 6);
-        graph.addEdge(6, 7);
-        graph.addEdge(4, 9);
-        graph.addEdge(4, 10);
-        graph.addEdge(8, 8); */
+       /* listGraph.addEdge(0, 1);
+        listGraph.addEdge(1, 2);
+        listGraph.addEdge(1, 3);
+        listGraph.addEdge(1, 7);
+        listGraph.addEdge(2, 3);
+        listGraph.addEdge(2, 5);
+        listGraph.addEdge(2, 6);
+        listGraph.addEdge(5, 6);
+        listGraph.addEdge(6, 7);
+        listGraph.addEdge(4, 9);
+        listGraph.addEdge(4, 10);
+        listGraph.addEdge(8, 8); */
 
-       /* graph.addEdge(0, 11);
-        graph.addEdge(0, 12);
-        graph.addEdge(11, 12);
-        graph.addEdge(11, 9);
-        graph.addEdge(11, 7);
-        graph.addEdge(9, 10);
-        graph.addEdge(9, 7);
-        graph.addEdge(7, 8);
-        graph.addEdge(7, 6);
-        graph.addEdge(1, 2);
-        graph.addEdge(1, 13);
-        graph.addEdge(2, 13);
-        graph.addEdge(3, 4);
-        graph.addEdge(4, 5);*/
+       /* listGraph.addEdge(0, 11);
+        listGraph.addEdge(0, 12);
+        listGraph.addEdge(11, 12);
+        listGraph.addEdge(11, 9);
+        listGraph.addEdge(11, 7);
+        listGraph.addEdge(9, 10);
+        listGraph.addEdge(9, 7);
+        listGraph.addEdge(7, 8);
+        listGraph.addEdge(7, 6);
+        listGraph.addEdge(1, 2);
+        listGraph.addEdge(1, 13);
+        listGraph.addEdge(2, 13);
+        listGraph.addEdge(3, 4);
+        listGraph.addEdge(4, 5);*/
 
-        /*System.out.println(graph.printGraph());
+        /*System.out.println(listGraph.printGraph());
 
         System.out.println();
 
@@ -68,7 +72,7 @@ public class Main {
 
         System.out.println(graph1.printGraph());
 
-        DepthFirstSearch depthFirstSearch = new DepthFirstSearch(graph);
+        DepthFirstSearch depthFirstSearch = new DepthFirstSearch(listGraph);
         //depthFirstSearch.dfs(0,0);
         depthFirstSearch.searchAll();
         depthFirstSearch.printOrder();
