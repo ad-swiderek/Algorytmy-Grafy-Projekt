@@ -23,8 +23,15 @@ public class Components {
         return componentNumber[v];
     }
 
-    public int getComponentSize(int v) {
-        return componentSize[v];
+    private int maxComponentSizeId() {
+        int componentId = 0, maxSize = 0;
+        for (int i = 0; i < count; i++) {
+            if (componentSize[i] > maxSize) {
+                maxSize = componentSize[i];
+                componentId = i;
+            }
+        }
+        return componentId;
     }
 
     public int getCount() {
@@ -46,14 +53,37 @@ public class Components {
         return getComponentNumber(v) == getComponentNumber(w);
     }
 
-    public void printComponents(){
-        for(int i=0; i<count; i++){
-            System.out.print((i+1) + " component: ");
-            for(int j = 0 ; j< g.getV(); j++){
-                if(componentNumber[j]==i)
+    public void printComponents() {
+        for (int i = 0; i < count; i++) {
+            System.out.print((i + 1) + " component: ");
+            for (int j = 0; j < g.getV(); j++) {
+                if (componentNumber[j] == i)
                     System.out.print(j + " ");
             }
             System.out.println();
         }
     }
+
+    public void mergeComponents() {
+        if (count > 1) {
+            int maxSizeId = maxComponentSizeId();
+            int firstVertex = getVertexFromComponent(maxSizeId);
+            for (int j = 0; j < g.getV(); j++) {
+                if (componentNumber[j] != maxSizeId) {
+                    g.addEdge(j, firstVertex);
+                }
+            }
+
+        }
+    }
+
+    private int getVertexFromComponent(int comp) {
+        for (int j = 0; j < g.getV(); j++) {
+            if (componentNumber[j] == comp) {
+                return j;
+            }
+        }
+        return 0;
+    }
+
 }

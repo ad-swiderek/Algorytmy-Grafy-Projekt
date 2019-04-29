@@ -4,6 +4,31 @@ public class Main {
 
     public static void main(String[] args) {
         ListGraph listGraph = new ListGraph(13);
+        MatrixGraph matrixGraph = new MatrixGraph(13);
+        RandomGraphGenerator randomGraphGenerator = new RandomGraphGenerator(listGraph, matrixGraph, 1);
+
+        Components components = new Components(listGraph);
+
+        System.out.println(components.getCount() + " components");
+        components.printComponents();
+        System.out.println(listGraph.printGraph());
+
+        components.mergeComponents();
+        components = new Components(listGraph);
+        System.out.println();
+        System.out.println(components.getCount() + " components");
+        components.printComponents();
+        System.out.println(listGraph.printGraph());
+        System.out.println();
+
+        listGraph.removeEdge(3,4);
+        listGraph.removeEdge(7,8);
+
+        components=new Components(listGraph);
+        System.out.println(components.getCount() + " components");
+        components.printComponents();
+        System.out.println(listGraph.printGraph());
+
         /*listGraph.addEdge(0, 5);
         listGraph.addEdge(4, 3);
         listGraph.addEdge(0, 1);
@@ -18,13 +43,7 @@ public class Main {
         listGraph.addEdge(9, 11);
         listGraph.addEdge(5, 3);
         //listGraph.addEdge(6, 7); */
-        MatrixGraph matrixGraph = new MatrixGraph(13);
-        RandomGraphGenerator randomGraphGenerator = new RandomGraphGenerator(listGraph, matrixGraph, 0.3);
-        Components components = new Components(listGraph);
-        System.out.println(components.getCount() + " components");
-        components.printComponents();
-        System.out.println(listGraph.printGraph());
-        System.out.println(matrixGraph.printGraph());
+        //System.out.println(matrixGraph.printGraph());
 
 
        /* listGraph.addEdge(0, 1);
