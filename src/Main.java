@@ -3,10 +3,17 @@ import java.util.Queue;
 public class Main {
 
     public static void main(String[] args) {
-        ListGraph listGraph = new ListGraph(13);
-        MatrixGraph matrixGraph = new MatrixGraph(13);
+        ListGraph listGraph = new ListGraph(12);
+        MatrixGraph matrixGraph = new MatrixGraph(12);
         RandomGraphGenerator randomGraphGenerator = new RandomGraphGenerator(listGraph, matrixGraph, 1);
+       // System.out.println(listGraph.printGraph());
+        listGraph.deleteAllEdges();
+        /*for (int t : listGraph.adj(0)) {
+            System.out.println(t);
+        }*/
 
+
+       /* int v = listGraph.getV();
         Components components = new Components(listGraph);
 
         System.out.println(components.getCount() + " components");
@@ -21,13 +28,13 @@ public class Main {
         System.out.println(listGraph.printGraph());
         System.out.println();
 
-        listGraph.removeEdge(3,4);
-        listGraph.removeEdge(7,8);
+        listGraph.removeEdge((v / 3) - 1, v / 3);
+        listGraph.removeEdge(((2 * v) / 3) - 1, (2 * v) / 3);
 
         components=new Components(listGraph);
         System.out.println(components.getCount() + " components");
         components.printComponents();
-        System.out.println(listGraph.printGraph());
+        System.out.println(listGraph.printGraph()); */
 
         /*listGraph.addEdge(0, 5);
         listGraph.addEdge(4, 3);

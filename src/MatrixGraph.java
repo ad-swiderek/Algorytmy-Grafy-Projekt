@@ -51,4 +51,14 @@ public class MatrixGraph extends Graph {
     public Iterable<Integer> adj(int v) {
         return L[v];
     }
+
+    @Override
+    public void addSingleEdge(int v, int w) {
+
+    }
+
+    @Override
+    public void deleteAllEdges() {
+
+    }
 }

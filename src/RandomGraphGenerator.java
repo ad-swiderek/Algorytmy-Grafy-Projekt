@@ -9,34 +9,40 @@ public class RandomGraphGenerator {
                 rand = Math.random();
                 if (rand <= prob) {
                     listGraph.addEdge(i, j);
+                    listGraph.addSingleEdge(i, j);
                     martixGraph.addEdge(i, j);
                 }
             }
         }
 
         //tworzymy most:
-        //listGraph.addEdge((v / 3) - 1, v / 3);
-        //martixGraph.addEdge((v / 3) - 1, v / 3);
+        listGraph.addEdge((v / 3) - 1, v / 3);
+        listGraph.addSingleEdge((v / 3) - 1, v / 3);
+
+        martixGraph.addEdge((v / 3) - 1, v / 3);
 
         for (int i = v / 3; i < (2 * v) / 3; i++) {
             for (int j = i + 1; j < (2 * v) / 3; j++) {
                 rand = Math.random();
                 if (rand <= prob) {
                     listGraph.addEdge(i, j);
+                    listGraph.addSingleEdge(i, j);
                     martixGraph.addEdge(i, j);
                 }
             }
         }
 
         //tworzymy most:
-        //listGraph.addEdge(((2 * v) / 3) - 1, (2 * v) / 3);
-        //martixGraph.addEdge(((2 * v) / 3) - 1, (2 * v) / 3);
+        listGraph.addEdge(((2 * v) / 3) - 1, (2 * v) / 3);
+        listGraph.addSingleEdge(((2 * v) / 3) - 1, (2 * v) / 3);
+        martixGraph.addEdge(((2 * v) / 3) - 1, (2 * v) / 3);
 
         for (int i = (2 * v) / 3; i < v; i++) {
             for (int j = i + 1; j < v; j++) {
                 rand = Math.random();
                 if (rand <= prob) {
                     listGraph.addEdge(i, j);
+                    listGraph.addSingleEdge(i, j);
                     martixGraph.addEdge(i, j);
                 }
             }

@@ -14,6 +14,12 @@ public class ListGraph extends Graph {
     }
 
     @Override
+    public void addSingleEdge(int v, int w) {
+        singleEdges[v].add(w);
+    }
+
+
+    @Override
     public void removeEdge(int v, int w) {
         Iterator<Integer> itv = L[v].iterator();
         Iterator<Integer> itw = L[w].iterator();
@@ -54,6 +60,18 @@ public class ListGraph extends Graph {
     @Override
     public Iterable<Integer> adj(int v) {
         return L[v];
+    }
+
+    @Override
+    public void deleteAllEdges() {
+        System.out.println(printGraph());
+        for (int i = 0; i < V; i++) {
+            for (int j : singleEdges[i]) {
+                removeEdge(i, j);
+                System.out.println(printGraph());
+                //Thread.sleep(2000);
+            }
+        }
     }
 
 }
