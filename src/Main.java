@@ -1,54 +1,74 @@
+import java.io.*;
+import java.util.Scanner;
+
 public class Main {
 
-    public static void main(String[] args) {
-        ListGraph listGraph = new ListGraph(50);
-        MatrixGraph matrixGraph = new MatrixGraph(50);
-        RandomGraphGenerator randomGraphGenerator = new RandomGraphGenerator(listGraph, matrixGraph, 0.25);
-        System.out.println("List: ");
-        listGraph.deleteAllEdges();
+    public static void main(String[] args) throws IOException {
+        long startTime;
+        long stopTime;
+        String toFileWriting;
+        String fileName = "results.txt";
+        BufferedReader br = new BufferedReader(new FileReader(fileName));
+        BufferedWriter bw = new BufferedWriter(new FileWriter("results.txt", true));
+
+        System.out.println("Podaj liczbe wierzcholkow grafu: ");
+        Scanner in = new Scanner(System.in);
+        int v = in.nextInt();
+        ListGraph listGraph = new ListGraph(v);
+        MatrixGraph matrixGraph = new MatrixGraph(v);
         Tarjan tj = new Tarjan(listGraph);
+        Tarjan tj2 = new Tarjan(matrixGraph);
+
+        System.out.println("Podaj gestosc grafu (liczba z przedzialu 0-1 w postaci ułamka dzisietnego np. 0,75 - im wieksza liczba tym wyzsza gestosc)");
+        double p = in.nextDouble();
+        RandomGraphGenerator randomGraphGenerator = new RandomGraphGenerator(listGraph, matrixGraph, p);
+
+        bw.write(Integer.toString(v) + "\t" + Double.toString(p) + "\t\t");
+        startTime = System.nanoTime();
+        listGraph.deleteAllEdges();
+        stopTime = System.nanoTime();
+        System.out.println("Lista naiwny: " + (stopTime - startTime) + "\n");
+        toFileWriting = Long.toString(stopTime - startTime);
+        bw.write(toFileWriting + "\t");
+
+        startTime = System.nanoTime();
         listGraph.deleteTreeEdges();
-        System.out.println("Matrix: ");
+        stopTime = System.nanoTime();
+        System.out.println("Lista krawedzie drzewowe: " + (stopTime - startTime) + "\n");
+        toFileWriting = Long.toString(stopTime - startTime);
+        bw.write(toFileWriting + "\t");
+
+        startTime = System.nanoTime();
+        tj.startTarjan();
+        stopTime = System.nanoTime();
+        System.out.println("Lista Tarjan: " + (stopTime - startTime) + "\n");
+        toFileWriting = Long.toString(stopTime - startTime);
+        bw.write(toFileWriting + "\t");
+
+        startTime = System.nanoTime();
         matrixGraph.deleteAllEdges();
-        Tarjan tj2 = new Tarjan(listGraph);
+        stopTime = System.nanoTime();
+        System.out.println("Matrix naiwny: " + (stopTime - startTime) + "\n");
+        toFileWriting = Long.toString(stopTime - startTime);
+        bw.write(toFileWriting + "\t");
+
+        startTime = System.nanoTime();
         matrixGraph.deleteTreeEdges();
+        stopTime = System.nanoTime();
+        System.out.println("Matrix krawedzie drzewowe: " + (stopTime - startTime) + "\n");
+        toFileWriting = Long.toString(stopTime - startTime);
+        bw.write(toFileWriting + "\t");
 
-        //Components comp = new Components(listGraph);
-       // Components comp2 = new Components(matrixGraph);
-       // System.out.println(comp2.getCount() + " components");
-        //comp2.mergeComponents();
-        //matrixGraph.removeEdge(3,4);
-        //comp2= new Components(matrixGraph);
-        //System.out.println(comp2.getCount() + "components");
-        //matrixGraph.deleteAllEdges();
+        startTime = System.nanoTime();
+        tj2.startTarjan();
+        stopTime = System.nanoTime();
+        System.out.println("Matrix Tarjan: " + (stopTime - startTime) + "\n");
+        toFileWriting = Long.toString(stopTime - startTime);
+        bw.write(toFileWriting + "\t");
 
-        //Tarjan tj = new Tarjan(matrixGraph);
-        //TreeEdgesDFS dfs = new TreeEdgesDFS(listGraph, 0);
-
-            //System.out.println(listGraph.printGraph());
-        //System.out.println(comp.getCount() + "components");
-        //System.out.println(comp2.getCount() + "components");
-
-       /* matrixGraph.addEdge(0,1);
-        matrixGraph.addEdge(1,2);
-        matrixGraph.addEdge(1,3);
-        matrixGraph.addEdge(2,3);
-        matrixGraph.addEdge(1,7);
-        matrixGraph.addEdge(2,6);
-        matrixGraph.addEdge(2,5);
-        matrixGraph.addEdge(6,5);
-        matrixGraph.addEdge(6,7);
-        matrixGraph.addEdge(4,9);
-        matrixGraph.addEdge(9,10);
-        matrixGraph.addEdge(10,4);
-        matrixGraph.addEdge(8,8);
-        TreeEdgesDFS dfs = new TreeEdgesDFS(matrixGraph, 0);
-        System.out.println(matrixGraph.printGraph());
-        Tarjan tj = new Tarjan(matrixGraph); */
-        //Tarjan tj = new Tarjan(matrixGraph);
-
-
-
+        bw.write("\n");
+        br.close();
+        bw.close();
     }
 }
 

@@ -1,0 +1,131 @@
+Lista Naiwny Usuwanie: 12500
+Lista Naiwny Sprawdzanie Spojnosci: 18600
+Lista Naiwny Dodawanie: 6300
+Lista Naiwny Usuwanie: 5700
+Lista Naiwny Sprawdzanie Spojnosci: 18500
+Lista Naiwny Dodawanie: 2100
+Lista Naiwny Usuwanie: 6800
+Lista Naiwny Sprawdzanie Spojnosci: 13200
+Lista Naiwny Dodawanie: 2300
+Lista Naiwny Usuwanie: 5200
+2 3 most
+Lista Naiwny Sprawdzanie Spojnosci: 8638300
+Lista Naiwny Dodawanie: 2100
+Lista Naiwny Usuwanie: 5700
+Lista Naiwny Sprawdzanie Spojnosci: 10800
+Lista Naiwny Dodawanie: 2800
+Lista Naiwny Usuwanie: 4900
+Lista Naiwny Sprawdzanie Spojnosci: 12900
+Lista Naiwny Dodawanie: 1300
+Lista Naiwny Usuwanie: 4300
+Lista Naiwny Sprawdzanie Spojnosci: 14400
+Lista Naiwny Dodawanie: 1300
+Lista Naiwny Usuwanie: 4200
+5 6 most
+Lista Naiwny Sprawdzanie Spojnosci: 99800
+Lista Naiwny Dodawanie: 1300
+Lista Naiwny Usuwanie: 4300
+Lista Naiwny Sprawdzanie Spojnosci: 12800
+Lista Naiwny Dodawanie: 1400
+Lista Naiwny Usuwanie: 4700
+Lista Naiwny Sprawdzanie Spojnosci: 10000
+Lista Naiwny Dodawanie: 1400
+Lista Naiwny Usuwanie: 4300
+Lista Naiwny Sprawdzanie Spojnosci: 9900
+Lista Naiwny Dodawanie: 2500
+
+
+
+Lista Ulepszony Usuwanie: 4800
+Lista Ulepszony Sprawdzanie Spojnosci: 9700
+Lista Ulepszony Dodawanie: 1400
+Lista Ulepszony Usuwanie: 4200
+Lista Ulepszony Sprawdzanie Spojnosci: 8700
+Lista Ulepszony Dodawanie: 1200
+Lista Ulepszony Usuwanie: 3600
+2 3 most
+Lista Ulepszony Sprawdzanie Spojnosci: 395200
+Lista Ulepszony Dodawanie: 2400
+Lista Ulepszony Usuwanie: 5300
+Lista Ulepszony Sprawdzanie Spojnosci: 8700
+Lista Ulepszony Dodawanie: 1600
+Lista Ulepszony Usuwanie: 4200
+Lista Ulepszony Sprawdzanie Spojnosci: 11100
+Lista Ulepszony Dodawanie: 1500
+Lista Ulepszony Usuwanie: 4600
+5 6 most
+Lista Ulepszony Sprawdzanie Spojnosci: 133200
+Lista Ulepszony Dodawanie: 1500
+Lista Ulepszony Usuwanie: 4900
+Lista Ulepszony Sprawdzanie Spojnosci: 9300
+Lista Ulepszony Dodawanie: 1400
+Lista Ulepszony Usuwanie: 4500
+Lista Ulepszony Sprawdzanie Spojnosci: 9100
+Lista Ulepszony Dodawanie: 1400
+
+
+
+Macierz Naiwny Usuwanie: 1800
+Macierz Naiwny Sprawdzanie Spojnosci: 17800
+Macierz Naiwny Dodawanie: 3100
+Macierz Naiwny Usuwanie: 600
+Macierz Naiwny Sprawdzanie Spojnosci: 15800
+Macierz Naiwny Dodawanie: 500
+Macierz Naiwny Usuwanie: 400
+Macierz Naiwny Sprawdzanie Spojnosci: 22700
+Macierz Naiwny Dodawanie: 500
+Macierz Naiwny Usuwanie: 400
+2 3 most
+Macierz Naiwny Sprawdzanie Spojnosci: 319900
+Macierz Naiwny Dodawanie: 400
+Macierz Naiwny Usuwanie: 400
+Macierz Naiwny Sprawdzanie Spojnosci: 21500
+Macierz Naiwny Dodawanie: 400
+Macierz Naiwny Usuwanie: 400
+Macierz Naiwny Sprawdzanie Spojnosci: 14900
+Macierz Naiwny Dodawanie: 500
+Macierz Naiwny Usuwanie: 400
+Macierz Naiwny Sprawdzanie Spojnosci: 13800
+Macierz Naiwny Dodawanie: 400
+Macierz Naiwny Usuwanie: 300
+5 6 most
+Macierz Naiwny Sprawdzanie Spojnosci: 39800
+Macierz Naiwny Dodawanie: 400
+Macierz Naiwny Usuwanie: 400
+Macierz Naiwny Sprawdzanie Spojnosci: 13100
+Macierz Naiwny Dodawanie: 500
+Macierz Naiwny Usuwanie: 400
+Macierz Naiwny Sprawdzanie Spojnosci: 18200
+Macierz Naiwny Dodawanie: 400
+Macierz Naiwny Usuwanie: 300
+Macierz Naiwny Sprawdzanie Spojnosci: 12900
+Macierz Naiwny Dodawanie: 400
+
+
+
+Macierz Ulepszony Usuwanie: 500
+Macierz Ulepszony Sprawdzanie Spojnosci: 13000
+Macierz Ulepszony Dodawanie: 600
+Macierz Ulepszony Usuwanie: 500
+Macierz Ulepszony Sprawdzanie Spojnosci: 21700
+Macierz Ulepszony Dodawanie: 500
+Macierz Ulepszony Usuwanie: 300
+2 3 most
+Macierz Ulepszony Sprawdzanie Spojnosci: 279300
+Macierz Ulepszony Dodawanie: 500
+Macierz Ulepszony Usuwanie: 300
+Macierz Ulepszony Sprawdzanie Spojnosci: 7800
+Macierz Ulepszony Dodawanie: 400
+Macierz Ulepszony Usuwanie: 300
+Macierz Ulepszony Sprawdzanie Spojnosci: 7300
+Macierz Ulepszony Dodawanie: 400
+Macierz Ulepszony Usuwanie: 300
+5 6 most
+Macierz Ulepszony Sprawdzanie Spojnosci: 31100
+Macierz Ulepszony Dodawanie: 400
+Macierz Ulepszony Usuwanie: 400
+Macierz Ulepszony Sprawdzanie Spojnosci: 7100
+Macierz Ulepszony Dodawanie: 300
+Macierz Ulepszony Usuwanie: 300
+Macierz Ulepszony Sprawdzanie Spojnosci: 7400
+Macierz Ulepszony Dodawanie: 400

@@ -56,34 +56,60 @@ public class MatrixGraph extends Graph {
 
     @Override
     public void deleteAllEdges() {
+        //long startTime;
+        //long stopTime;
         Components comp = new Components(this);
         int componentsCount = comp.getCount();
         //System.out.println("components count: " + componentsCount);
         //System.out.println(printGraph());
         for (int i = 0; i < V; i++) {
             for (int j : singleEdges[i]) {
+                //startTime = System.nanoTime();
                 removeEdge(i, j);
+                //stopTime = System.nanoTime();
+                //System.out.println("Macierz Naiwny Usuwanie: " + (stopTime - startTime));
+
+                //startTime = System.nanoTime();
                 comp = new Components(this);
                 if (comp.getCount() != componentsCount)
-                System.out.println(i + " " + j + " most");
+                    System.out.println(i + " " + j + " most");
+                //stopTime = System.nanoTime();
+                //System.out.println("Macierz Naiwny Sprawdzanie Spojnosci: " + (stopTime - startTime));
+
+                //startTime = System.nanoTime();
                 addEdge(i, j);
+                //stopTime = System.nanoTime();
+                //System.out.println("Macierz Naiwny Dodawanie: " + (stopTime - startTime));
             }
         }
     }
 
     @Override
     public void deleteTreeEdges() {
+        //long startTime;
+        //long stopTime;
         TreeEdgesDFS teDFS = new TreeEdgesDFS(this, 0);
         Components comp = new Components(this);
         int componentsCount = comp.getCount();
         //System.out.println("components count: " + componentsCount);
         for (int i = 0; i < V; i++) {
             for (int j : treeEdges[i]) {
+                //startTime = System.nanoTime();
                 removeEdge(i, j);
+                //stopTime = System.nanoTime();
+                //System.out.println("Macierz Ulepszony Usuwanie: " + (stopTime - startTime));
+
+                //startTime = System.nanoTime();
                 comp = new Components(this);
                 if (comp.getCount() != componentsCount)
                     System.out.println(i + " " + j + " most");
+                //stopTime = System.nanoTime();
+                //System.out.println("Macierz Ulepszony Sprawdzanie Spojnosci: " + (stopTime - startTime));
+
+                //startTime = System.nanoTime();
                 addEdge(i, j);
+                //stopTime = System.nanoTime();
+                //System.out.println("Macierz Ulepszony Dodawanie: " + (stopTime - startTime));
             }
         }
     }

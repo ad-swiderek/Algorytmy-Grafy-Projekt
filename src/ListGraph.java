@@ -66,33 +66,60 @@ public class ListGraph extends Graph {
 
     @Override
     public void deleteAllEdges() {
+        //long startTime;
+        //long stopTime;
         Components comp = new Components(this);
         int componentsCount = comp.getCount();
         //System.out.println("components count: " + componentsCount);
         for (int i = 0; i < V; i++) {
             for (int j : singleEdges[i]) {
+                //startTime = System.nanoTime();
                 removeEdge(i, j);
+                //stopTime = System.nanoTime();
+                //System.out.println("Lista Naiwny Usuwanie: " + (stopTime - startTime));
+
+                //startTime = System.nanoTime();
                 comp = new Components(this);
-                if (comp.getCount() != componentsCount)
+                if (comp.getCount() != componentsCount) {
                     System.out.println(i + " " + j + " most");
+                }
+                //stopTime = System.nanoTime();
+                //System.out.println("Lista Naiwny Sprawdzanie Spojnosci: " + (stopTime - startTime));
+
+                //startTime = System.nanoTime();
                 addEdge(i, j);
+                //stopTime = System.nanoTime();
+                //System.out.println("Lista Naiwny Dodawanie: " + (stopTime - startTime));
             }
         }
     }
 
     @Override
     public void deleteTreeEdges() {
+        //long startTime;
+        //long stopTime;
         TreeEdgesDFS teDFS = new TreeEdgesDFS(this, 0);
         Components comp = new Components(this);
         int componentsCount = comp.getCount();
         //System.out.println("components count: " + componentsCount);
         for (int i = 0; i < V; i++) {
             for (int j : treeEdges[i]) {
+                //startTime = System.nanoTime();
                 removeEdge(i, j);
+                //stopTime = System.nanoTime();
+                //System.out.println("Lista Ulepszony Usuwanie: " + (stopTime - startTime));
+
+                //startTime = System.nanoTime();
                 comp = new Components(this);
                 if (comp.getCount() != componentsCount)
                     System.out.println(i + " " + j + " most");
+                //stopTime = System.nanoTime();
+                //System.out.println("Lista Ulepszony Sprawdzanie Spojnosci: " + (stopTime - startTime));
+
+                //startTime = System.nanoTime();
                 addEdge(i, j);
+                //stopTime = System.nanoTime();
+                //System.out.println("Lista Ulepszony Dodawanie: " + (stopTime - startTime));
             }
         }
     }

@@ -14,7 +14,9 @@ public class Tarjan {
             preorder[i] = -1;
             low[i] = -1;
         }
+    }
 
+    public void startTarjan() {
         for (int i = 0; i < g.getV(); i++) {
             if (preorder[i] == -1) {
                 dfs(i, i);
@@ -31,11 +33,9 @@ public class Tarjan {
                 low[w] = Math.min(low[w], low[t]);
                 if (low[t] == preorder[t]) {
                     bridges++;
-                    System.out.println(w + " " + t + " to most");
+                    System.out.println(w + " " + t + " most");
                 }
-            }
-
-            else if(t!=v){
+            } else if (t != v) {
                 low[w] = Math.min(low[w], preorder[t]);
             }
         }
