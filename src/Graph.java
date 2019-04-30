@@ -5,11 +5,15 @@ public abstract class Graph {
     protected ArrayList<Integer>[] L;
     protected ArrayList<Integer>[] singleEdges;
     protected ArrayList<Integer>[] treeEdges;
+    protected boolean[][] M;
+
     public Graph(int V) {
         this.V = V;
         L = new ArrayList[V];
         singleEdges = new ArrayList[V];
         treeEdges = new ArrayList[V];
+        this.M = new boolean[V][V];
+
         for (int i = 0; i < V; i++) {
             L[i] = new ArrayList<>();
             singleEdges[i] = new ArrayList<>();
@@ -34,4 +38,6 @@ public abstract class Graph {
     public abstract void addSingleEdge(int v, int w);
 
     public abstract void deleteAllEdges();
+
+    public abstract void deleteTreeEdges();
 }

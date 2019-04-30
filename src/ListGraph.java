@@ -1,3 +1,5 @@
+import com.sun.source.tree.Tree;
+
 import java.util.Iterator;
 import java.util.Random;
 
@@ -65,19 +67,35 @@ public class ListGraph extends Graph {
     @Override
     public void deleteAllEdges() {
         Components comp = new Components(this);
-        System.out.println("components count: " + comp.getCount());
-        System.out.println(printGraph());
+        int componentsCount = comp.getCount();
+        //System.out.println("components count: " + componentsCount);
         for (int i = 0; i < V; i++) {
             for (int j : singleEdges[i]) {
                 removeEdge(i, j);
-                System.out.println(printGraph());
                 comp = new Components(this);
-                System.out.println("components count: " + comp.getCount());
+                if (comp.getCount() != componentsCount)
+                    System.out.println(i + " " + j + " most");
                 addEdge(i, j);
-                System.out.println(printGraph());
-
             }
         }
     }
+
+    @Override
+    public void deleteTreeEdges() {
+        TreeEdgesDFS teDFS = new TreeEdgesDFS(this, 0);
+        Components comp = new Components(this);
+        int componentsCount = comp.getCount();
+        //System.out.println("components count: " + componentsCount);
+        for (int i = 0; i < V; i++) {
+            for (int j : treeEdges[i]) {
+                removeEdge(i, j);
+                comp = new Components(this);
+                if (comp.getCount() != componentsCount)
+                    System.out.println(i + " " + j + " most");
+                addEdge(i, j);
+            }
+        }
+    }
+
 
 }

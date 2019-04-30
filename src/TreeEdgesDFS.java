@@ -17,6 +17,7 @@ public class TreeEdgesDFS {
             if (visited[t] == false) {
                 dfs(t);
                 g.treeEdges[v].add(t);
+                //System.out.println("Krawedz drzewowa: " + v + " " + t);
             }
         }
     }
