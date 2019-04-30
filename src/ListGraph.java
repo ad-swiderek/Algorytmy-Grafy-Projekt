@@ -64,12 +64,18 @@ public class ListGraph extends Graph {
 
     @Override
     public void deleteAllEdges() {
+        Components comp = new Components(this);
+        System.out.println("components count: " + comp.getCount());
         System.out.println(printGraph());
         for (int i = 0; i < V; i++) {
             for (int j : singleEdges[i]) {
                 removeEdge(i, j);
                 System.out.println(printGraph());
-                //Thread.sleep(2000);
+                comp = new Components(this);
+                System.out.println("components count: " + comp.getCount());
+                addEdge(i, j);
+                System.out.println(printGraph());
+
             }
         }
     }
